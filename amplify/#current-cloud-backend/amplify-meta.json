@@ -1,0 +1,32 @@
+{
+	"providers": {
+		"awscloudformation": {
+			"AuthRoleName": "songwriter-songenv-20190802145110-authRole",
+			"UnauthRoleArn": "arn:aws:iam::251509651465:role/songwriter-songenv-20190802145110-unauthRole",
+			"AuthRoleArn": "arn:aws:iam::251509651465:role/songwriter-songenv-20190802145110-authRole",
+			"Region": "us-east-2",
+			"DeploymentBucketName": "songwriter-songenv-20190802145110-deployment",
+			"UnauthRoleName": "songwriter-songenv-20190802145110-unauthRole",
+			"StackName": "songwriter-songenv-20190802145110",
+			"StackId": "arn:aws:cloudformation:us-east-2:251509651465:stack/songwriter-songenv-20190802145110/7ea57ba0-b556-11e9-9813-0a2bc77d7190"
+		}
+	},
+	"hosting": {
+		"S3AndCloudFront": {
+			"service": "S3AndCloudFront",
+			"providerPlugin": "awscloudformation",
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/songwriter-songenv-20190802145110-deployment/amplify-cfn-templates/hosting/template.json",
+				"logicalId": "hostingS3AndCloudFront"
+			},
+			"lastPushTimeStamp": "2019-08-02T18:55:39.180Z",
+			"output": {
+				"S3BucketSecureURL": "https://songwriter-20190802145257-hostingbucket-songenv.s3.amazonaws.com",
+				"WebsiteURL": "http://songwriter-20190802145257-hostingbucket-songenv.s3-website.us-east-2.amazonaws.com",
+				"Region": "us-east-2",
+				"HostingBucketName": "songwriter-20190802145257-hostingbucket-songenv"
+			},
+			"lastPushDirHash": "/1GLzc/HT1ZeCzutPXkr5kdo0sc="
+		}
+	}
+}
