@@ -2,34 +2,47 @@
   "name": "songwriter",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://gawainb.github.com",
   "dependencies": {
-    "@material-ui/core": "^4.3.0",
-    "@material-ui/icons": "^4.2.1",
-    "aws-amplify": "^1.1.35",
-    "aws-amplify-react": "^2.3.12",
+    "@material-ui/core": "^4.1.1",
+    "@material-ui/icons": "^4.2.0",
+    "@material-ui/lab": "^4.0.0-alpha.16",
+    "@material-ui/styles": "^4.0.0",
+    "font-awesome": "^4.7.0",
+    "gh-pages": "^2.0.1",
+    "node-rhymebrain": "0.0.5",
+    "numeral": "^2.0.6",
+    "opencollective-postinstall": "^2.0.2",
+    "query-string": "^6.2.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1"
+    "react-froala-wysiwyg": "^3.0.4",
+    "react-router-dom": "^5.0.1",
+    "react-scripts": "3.0.1",
+    "react-swipeable-views": "^0.13.0",
+    "react-swipeable-views-utils": "^0.13.0",
+    "recharts": "^1.3.5"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "postinstall": "opencollective-postinstall || true"
   },
   "eslintConfig": {
     "extends": "react-app"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "collective": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/material-sense"
   }
 }

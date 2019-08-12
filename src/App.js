@@ -1,33 +1,39 @@
-import withRoot from './modules/withRoot';
-// --- Post bootstrap -----
-import React from 'react';
-import Amplify from 'aws-amplify';
-import awsconfig from './aws-exports';
-import { withAuthenticator } from 'aws-amplify-react';
-import ProductCategories from './modules/views/ProductCategories';
-import ProductSmokingHero from './modules/views/ProductSmokingHero';
-import AppFooter from './modules/views/AppFooter';
-import ProductHero from './modules/views/ProductHero';
-import ProductValues from './modules/views/ProductValues';
-import ProductHowItWorks from './modules/views/ProductHowItWorks';
-import ProductCTA from './modules/views/ProductCTA';
-import AppAppBar from './modules/views/AppAppBar';
+import React, { Component } from 'react';
+import { ThemeProvider } from '@material-ui/styles';
+import { createMuiTheme } from '@material-ui/core/styles'
+import './App.css';
+import Routes from './routes'
+import { blue, indigo } from '@material-ui/core/colors'
 
-Amplify.configure(awsconfig);
+const theme = createMuiTheme({
+  palette: {
+    secondary: {
+      main: blue[900]
+    },
+    primary: {
+      main: indigo[700]
+    }
+  },
+  typography: {
+    // Use the system font instead of the default Roboto font.
+    fontFamily: [
+      '"Lato"',
+      'sans-serif'
+    ].join(',')
+  }
+});
 
-function App() {
-  return (
-    <React.Fragment>
-      <AppAppBar />
-      <ProductHero />
-      <ProductValues />
-      <ProductCategories />
-      <ProductHowItWorks />
-      <ProductCTA />
-      <ProductSmokingHero />
-      <AppFooter />
-    </React.Fragment>
-  );
+
+class App extends Component {
+  render() {
+    return (
+      <div>
+        <ThemeProvider theme={theme}>
+          <Routes />
+        </ThemeProvider>
+      </div>
+    );
+  }
 }
 
-export default withAuthenticator(withRoot(App), true);
+export default App;
